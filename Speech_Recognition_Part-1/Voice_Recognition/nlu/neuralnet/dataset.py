@@ -51,7 +51,7 @@ class IntentScenarioDataset:
             }
             
              
-            class EntityDataset:
+class EntityDataset:
     '''
     Dataset class for entity recognition
     '''
@@ -101,6 +101,4 @@ class IntentScenarioDataset:
             'target_entity': torch.tensor(target_entity,dtype=torch.long),
             'mask': torch.tensor(mask,dtype=torch.long),
             'token_type_ids': torch.tensor(token_type_id,dtype=torch.long)
-        }
-
-  
+        } 
