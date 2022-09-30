@@ -30,8 +30,8 @@ class IntentScenarioDataset:
                 add_special_token=True,
                 max_length = self.max_len,
                 padding = 'max_length'
-            )
-                        ids = out['input_ids']
+             )
+            ids = out['input_ids']
             mask = out['attention_mask']
             token_type_ids = out['token_type_ids']
             return {
@@ -41,7 +41,7 @@ class IntentScenarioDataset:
                 'mask': torch.tensor(mask,dtype=torch.long),
                 'token_type_ids': torch.tensor(token_type_ids,dtype=torch.long)
             }
-                   else:
+        else:
             return {
                 'ids': None,
                 'target_intent': torch.tensor(intent,dtype=torch.long),
@@ -50,6 +50,7 @@ class IntentScenarioDataset:
                 'token_type_ids':None
             }
             
+             
             class EntityDataset:
     '''
     Dataset class for entity recognition
