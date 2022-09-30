@@ -14,3 +14,12 @@ MAX_LEN = 61+2
 TRAIN_BATCH_SIZE = 128
 TEST_BATCH_SIZE = 128
 EPOCHS = 50
+
+#Model selection parameter
+BASE_MODEL = 'bert-base-uncased'
+TOKENIZER = transformers.BertTokenizer.from_pretrained(
+    BASE_MODEL,
+    do_lower_case = True
+)
+#device selection
+DEVICE = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
